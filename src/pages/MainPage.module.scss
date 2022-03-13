@@ -1,0 +1,17 @@
+.Container{
+    max-width: 1060px;
+    margin-top: 30px;
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    //space between flex
+    flex-direction: row;
+    //wrap no wrap
+    flex-wrap: nowrap;
+
+    margin: 0 auto;
+    position: relative;
+
+
+}

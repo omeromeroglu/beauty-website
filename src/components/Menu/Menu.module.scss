@@ -1,0 +1,61 @@
+@mixin iconArrangement {
+  display: block;
+  font-size: 28px;
+  margin: 0 auto;
+  padding-right: 8px;
+  transform: translateX(25%);
+}
+
+.Menu {
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  font-size: 16px;
+  background: white;
+  box-shadow: 0 4px 2px -4px gray;
+  display: flex;
+  justify-content: center;
+
+  max-width: 1060px;
+  width: 100%;
+  height: 72px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    box-shadow: 0 4px 2px -4px gray;
+    display: none;
+  }
+}
+
+.List {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+    justify-content: flex-start;
+
+  gap: 1rem;
+  padding: 0;
+  padding-right: 90px;
+  margin: 0;
+  margin-left: -200px;
+  list-style: none;
+  cursor: pointer;
+
+  //last item of this li color red
+  li:last-child {
+    //flex end
+    display: flex;
+    position: absolute;
+    right: 0;
+    padding-left: 20rem;
+    justify-content: flex-end;
+    margin-right: -130px;
+
+
+    &::before {
+      //get the icon for search
+      content: url("../../assets/Icons/lnr-magnifier.svg");
+      @include iconArrangement;
+    }
+  }
+}
