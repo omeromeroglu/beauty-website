@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useState } from "react"
 
 //Pages
 import MainPage from './pages/MainPage'
@@ -13,7 +14,14 @@ import { Menu } from "./components/Menu/Menu"
 import Footer from "./components/Footer/Footer"
 
 
+
 const App = () => {
+  //selected state  
+  const [selected, setSelected] = useState(null)
+
+  //selected product
+
+
   return (
     <BrowserRouter>
       <SalesBanner/>
@@ -21,8 +29,8 @@ const App = () => {
       <Header/>
       <Menu/>
       <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="product/:id" element={<ProductDetails />} />
+        <Route path="/" element={<MainPage selected={selected}/>}/>
+        <Route path="product/:id" element={<ProductDetails  selected={selected}/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
